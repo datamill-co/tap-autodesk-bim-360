@@ -1,0 +1,153 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": [
+        "string"
+      ]
+    },
+    "account_id": {
+      "type": [
+        "string"
+      ]
+    },
+    "name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "start_date": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "end_date": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "project_type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "value": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "currency": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "status": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "job_number": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "address_line_1": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "address_line_2": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "city": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "state_or_province": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "postal_code": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "country": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "business_unit_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "timezone": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "language": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "construction_type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "contract_type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "last_sign_in": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "created_at": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
+    }
+  }
+}
