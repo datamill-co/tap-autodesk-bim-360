@@ -7,6 +7,13 @@ from tap_autodesk_bim_360.endpoints import ENDPOINTS_CONFIG
 
 LOGGER = singer.get_logger()
 
+def nested_get(dic, path):
+    for key in path:
+        value = dic.get(key)
+        if value is None or key == path[-1]:
+            return value
+        dic = value
+
 def get_bookmark(state, stream_name, default):
     return state.get('bookmarks', {}).get(stream_name, default)
 
@@ -29,6 +36,7 @@ def sync_endpoint(client,
                   endpoint,
                   key_bag):
     persist = endpoint.get('persist', True)
+    url = None
 
     if persist:
         stream = catalog.get_stream(stream_name)
@@ -36,7 +44,8 @@ def sync_endpoint(client,
         mdata = metadata.to_map(stream.metadata)
         write_schema(stream)
 
-    path = endpoint['path'].format(**key_bag)
+    if 'url' in endpoint:
+        url = endpoint['url'].format(**key_bag)
 
     limit = 100
     offset = 0
@@ -44,13 +53,15 @@ def sync_endpoint(client,
         params = endpoint.get('params', {})
 
         if endpoint.get('paginate', True):
-            params['limit'] = limit
-            params['offset'] = offset
+            params[endpoint['paginate_limit_param']] = limit
+            params[endpoint['paginate_offset_param']] = offset
 
-        data = client.get(path,
-                          params=params,
-                          auth=endpoint.get('auth', 'user'),
-                          endpoint=stream_name)
+        data = client.request('GET',
+                              url=url,
+                              params=params,
+                              auth=endpoint.get('auth'),
+                              endpoint=stream_name,
+                              ignore_http_status_codes=endpoint.get('ignore_http_status_codes', []))
 
         if data is None:
             return
@@ -74,9 +85,13 @@ def sync_endpoint(client,
                         counter.increment()
                     if 'children' in endpoint:
                         child_key_bag = dict(key_bag)
+
                         if 'provides' in endpoint:
-                            for dest_key, obj_key in endpoint['provides'].items():
-                                child_key_bag[dest_key] = record[obj_key]
+                            for dest_key, obj_path in endpoint['provides'].items():
+                                if not isinstance(obj_path, list):
+                                    obj_path = [obj_path]
+                                child_key_bag[dest_key] = nested_get(record, obj_path)
+
                         for child_stream_name, child_endpoint in endpoint['children'].items():
                             if child_stream_name in required_streams:
                                 sync_endpoint(client,
@@ -110,7 +125,7 @@ def get_required_streams(endpoints, selected_stream_names):
                 required_streams += child_required_streams
     return required_streams
 
-def sync(client, catalog, state):
+def sync(client, config, catalog, state):
     if not catalog:
         catalog = discover()
         selected_streams = catalog.streams
@@ -123,6 +138,10 @@ def sync(client, catalog, state):
 
     required_streams = get_required_streams(ENDPOINTS_CONFIG, selected_stream_names)
 
+    key_bag = {
+        'account_id': config['account_id']
+    }
+
     for stream_name, endpoint in ENDPOINTS_CONFIG.items():
         if stream_name in required_streams:
             update_current_stream(state, stream_name)
@@ -133,6 +152,6 @@ def sync(client, catalog, state):
                           selected_stream_names,
                           stream_name,
                           endpoint,
-                          {})
+                          key_bag)
 
     update_current_stream(state)

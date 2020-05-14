@@ -1,0 +1,340 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": [
+        "string"
+      ]
+    },
+    "type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "attributes": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "created_at": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "synced_at": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "close_version": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "closed_at": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "closed_by": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "created_by": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "starting_version": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "title": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "description": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "location_description": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "markup_metadata": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "tags": {
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "target_urn": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "target_urn_page": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "collection_urn": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "due_date": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "identifier": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "status": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "assigned_to": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "assigned_to_type": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "answer": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "answered_at": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "answered_by": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "pushpin_attributes": {
+          "type": [
+            "null",
+            "object"
+          ],
+          "additionalProperties": true,
+          "properties": {
+          }
+        },
+        "owner": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "trades": {
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "issue_type_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "issue_type": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "issue_sub_type": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "root_cause_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "root_cause": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "quality_urns": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "permitted_statuses": {
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "permitted_attributes": {
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "comment_count": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "attachment_count": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "sheet_metadata": {
+          "type": [
+            "null",
+            "object"
+          ],
+          "additionalProperties": true,
+          "properties": {
+          }
+        }
+      }
+    },
+    "lbs_location": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ng_issue_subtype_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ng_issue_type_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "custom_attributes": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "additionalProperties": true,
+      "properties": {
+      }
+    },
+    "trades": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "additionalProperties": true,
+      "properties": {
+      }
+    },
+    "comments_attributes": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "snapshot_urn": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "attachments_attributes": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}

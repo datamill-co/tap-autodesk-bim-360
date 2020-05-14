@@ -34,10 +34,11 @@ def do_discover(client):
 def main():
     parsed_args = singer.utils.parse_args(REQUIRED_CONFIG_KEYS)
 
-    with BIM360Client(parsed_args.config) as client:
+    with BIM360Client(parsed_args.config, parsed_args.config_path) as client:
         if parsed_args.discover:
             do_discover(client)
         else:
             sync(client,
+                 parsed_args.config,
                  parsed_args.catalog,
                  parsed_args.state)

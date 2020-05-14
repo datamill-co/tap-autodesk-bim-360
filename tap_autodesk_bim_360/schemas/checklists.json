@@ -1,0 +1,499 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": [
+        "string"
+      ]
+    },
+    "type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "attributes": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "instanceRevision": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "urn": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "scheduledDate": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "location": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "title": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "templateVersionId": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "createdBy": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "modifiedBy": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "updatedAt": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "createdAt": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "deletedAt": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "instructions": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "templateType": {
+          "type": [
+            "null",
+            "object"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": [
+                "null",
+                "integer"
+              ]
+            },
+            "name": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "permittedAttributes": {
+              "type": [
+                "null",
+                "array"
+              ],
+              "items": {
+                "type": [
+                  "string"
+                ]
+              }
+            }
+          }
+        },
+        "status": {
+          "type": [
+            "null",
+            "object"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": [
+                "null",
+                "integer"
+              ]
+            },
+            "name": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "urgency": {
+              "type": [
+                "null",
+                "integer"
+              ]
+            },
+            "permittedAttributes": {
+              "type": [
+                "null",
+                "array"
+              ],
+              "items": {
+                "type": [
+                  "string"
+                ]
+              }
+            }
+          }
+        },
+        "signaturesStatus": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "assignees": {
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": [
+                  "null",
+                  "integer"
+                ]
+              },
+              "assigneeId": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "name": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "type": {
+                "type": [
+                  "null",
+                  "object"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "type": [
+                      "null",
+                      "integer"
+                    ]
+                  },
+                  "name": {
+                    "type": [
+                      "null",
+                      "string"
+                    ]
+                  },
+                  "permittedAttributes": {
+                    "type": [
+                      "null",
+                      "array"
+                    ],
+                    "items": {
+                      "type": [
+                        "string"
+                      ]
+                    }
+                  }
+                }
+              },
+              "permittedAttributes": {
+                "type": [
+                  "null",
+                  "array"
+                ],
+                "items": {
+                  "type": [
+                    "string"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "progress": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "completedItemsCount": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "permittedActions": {
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "permittedAttributes": {
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "allowSectionAssignee": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "templateId": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "completedOn": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        },
+        "startedOn": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "format": "date-time"
+        }
+      }
+    },
+    "relationships": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "sections": {
+          "meta": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "relation": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "readOnly": {
+                "type": [
+                  "null",
+                  "boolean"
+                ]
+              }
+            }
+          },
+          "data": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": [
+                "object"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "type": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "id": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              }
+            }
+          },
+          "container": {
+            "meta": {
+              "type": [
+                "null",
+                "object"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "relation": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "readOnly": {
+                  "type": [
+                    "null",
+                    "boolean"
+                  ]
+                }
+              }
+            },
+            "data": {
+              "type": [
+                "null",
+                "object"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "type": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "id": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              }
+            }
+          },
+          "createdForm": {
+            "meta": {
+              "type": [
+                "null",
+                "object"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "relation": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "readOnly": {
+                  "type": [
+                    "null",
+                    "boolean"
+                  ]
+                }
+              }
+            },
+            "data": {
+              "type": [
+                "null",
+                "object"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "type": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "id": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "meta": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "totalItems": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "totalSections": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "totalRequiredSignatures": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "totalSignedSignatures": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        },
+        "totalUnsignedSignatures": {
+          "type": [
+            "null",
+            "integer"
+          ]
+        }
+      }
+    }
+  }
+}
