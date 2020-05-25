@@ -7,6 +7,16 @@
         "string"
       ]
     },
+    "project_id": {
+      "type": [
+        "string"
+      ]
+    },
+    "container_id": {
+      "type": [
+        "string"
+      ]
+    },
     "type": {
       "type": [
         "null",

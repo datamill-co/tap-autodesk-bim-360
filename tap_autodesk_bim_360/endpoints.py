@@ -27,7 +27,8 @@ ENDPOINTS_CONFIG = {
         'auth': 'app',
         'data_key': 'data',
         'paginate_limit_param': 'page[limit]',
-        'paginate_offset_param': 'page[offset]',
+        'paginate_offset_param': 'page[number]',
+        'paginate_units': 'pages',
         'provides': {
             'project_id': 'id',
             'container_id': ['relationships', 'checklists', 'data', 'id'],
@@ -41,6 +42,7 @@ ENDPOINTS_CONFIG = {
                 'data_key': 'data',
                 'paginate_limit_param': 'page[limit]',
                 'paginate_offset_param': 'page[offset]',
+                'paginate_units': 'pages',
                 'ignore_http_status_codes': [403]
             },
             'issues': {
@@ -50,7 +52,18 @@ ENDPOINTS_CONFIG = {
                 'data_key': 'data',
                 'paginate_limit_param': 'page[limit]',
                 'paginate_offset_param': 'page[offset]',
+                'paginate_units': 'pages',
                 'ignore_http_status_codes': [401, 403]
+            },
+            'folder_contents': {
+                'url': 'https://developer.api.autodesk.com/data/v1/projects/{project_id}/folders/{root_folder_id}/contents',
+                'auth': 'user',
+                'pk': ['id'],
+                'data_key': 'data',
+                'paginate_limit_param': 'page[limit]',
+                'paginate_offset_param': 'page[number]',
+                'paginate_units': 'pages',
+                'ignore_http_status_codes': [403]
             }
         }
     }

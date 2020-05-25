@@ -47,6 +47,10 @@ def sync_endpoint(client,
     if 'url' in endpoint:
         url = endpoint['url'].format(**key_bag)
 
+    LOGGER.info('{} - Syncing: {}'.format(
+                stream_name,
+                url))
+
     limit = 100
     offset = 0
     while True:
@@ -55,6 +59,12 @@ def sync_endpoint(client,
         if endpoint.get('paginate', True):
             params[endpoint['paginate_limit_param']] = limit
             params[endpoint['paginate_offset_param']] = offset
+
+            LOGGER.info('{} - {} - limit: {}, offset: {}'.format(
+                stream_name,
+                url,
+                limit,
+                offset))
 
         data = client.request('GET',
                               url=url,
@@ -104,7 +114,10 @@ def sync_endpoint(client,
                                               child_key_bag)
 
         if endpoint.get('paginate', True) and len(records) == limit:
-            offset += limit
+            if endpoint.get('paginate_units') == 'pages':
+                offset += 1
+            else:
+                offset += limit
         else:
             break
 
