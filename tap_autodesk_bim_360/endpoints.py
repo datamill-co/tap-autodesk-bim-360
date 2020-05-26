@@ -42,7 +42,6 @@ ENDPOINTS_CONFIG = {
                 'data_key': 'data',
                 'paginate_limit_param': 'page[limit]',
                 'paginate_offset_param': 'page[offset]',
-                'paginate_units': 'pages',
                 'ignore_http_status_codes': [403]
             },
             'issues': {
@@ -52,7 +51,6 @@ ENDPOINTS_CONFIG = {
                 'data_key': 'data',
                 'paginate_limit_param': 'page[limit]',
                 'paginate_offset_param': 'page[offset]',
-                'paginate_units': 'pages',
                 'ignore_http_status_codes': [401, 403]
             },
             'folder_contents': {
